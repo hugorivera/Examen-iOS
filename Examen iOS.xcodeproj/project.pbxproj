@@ -15,6 +15,7 @@
 		C895127C2484B4A60093834E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C895127A2484B4A60093834E /* LaunchScreen.storyboard */; };
 		C89512872484B4A60093834E /* Examen_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89512862484B4A60093834E /* Examen_iOSTests.swift */; };
 		C89512922484B4A70093834E /* Examen_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89512912484B4A70093834E /* Examen_iOSUITests.swift */; };
+		C89512A02484B8EF0093834E /* OpcionesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C895129F2484B8EF0093834E /* OpcionesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C895128D2484B4A70093834E /* Examen iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Examen iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C89512912484B4A70093834E /* Examen_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examen_iOSUITests.swift; sourceTree = "<group>"; };
 		C89512932484B4A70093834E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C895129F2484B8EF0093834E /* OpcionesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcionesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				C89512782484B4A60093834E /* Assets.xcassets */,
 				C895127A2484B4A60093834E /* LaunchScreen.storyboard */,
 				C895127D2484B4A60093834E /* Info.plist */,
+				C895129F2484B8EF0093834E /* OpcionesTableViewController.swift */,
 			);
 			path = "Examen iOS";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C89512742484B4840093834E /* ViewController.swift in Sources */,
+				C89512A02484B8EF0093834E /* OpcionesTableViewController.swift in Sources */,
 				C89512702484B4840093834E /* AppDelegate.swift in Sources */,
 				C89512722484B4840093834E /* SceneDelegate.swift in Sources */,
 			);
@@ -444,7 +448,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hfrazor.Examen-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -462,7 +466,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hfrazor.Examen-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
