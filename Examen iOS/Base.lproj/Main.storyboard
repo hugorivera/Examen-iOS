@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -45,16 +45,16 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Opciones Table View Controller-->
         <scene sceneID="Fbr-31-o7b">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="wO0-nX-lsK" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="wO0-nX-lsK" customClass="OpcionesTableViewController" customModule="Examen_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xdt-cC-moD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="opcionesCell" textLabel="xrb-OW-QA9" style="IBUITableViewCellStyleDefault" id="vRD-uN-5eG">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="opcionesCell" textLabel="xrb-OW-QA9" style="IBUITableViewCellStyleDefault" id="vRD-uN-5eG">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vRD-uN-5eG" id="DYv-yk-25c">
@@ -83,6 +83,118 @@
             </objects>
             <point key="canvasLocation" x="2073.913043478261" y="138.61607142857142"/>
         </scene>
+        <!--Acciones Table View Controller-->
+        <scene sceneID="jP8-bx-lEP">
+            <objects>
+                <tableViewController storyboardIdentifier="accionesController" modalPresentationStyle="fullScreen" id="oQ0-Ed-blk" customClass="AccionesTableViewController" customModule="Examen_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dbx-vt-Ts1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="camaraAccionesCell" rowHeight="250" id="70K-wR-xtk" customClass="CamaraTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="250"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="70K-wR-xtk" id="cfK-As-qj6">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YtR-lv-JtN">
+                                            <rect key="frame" x="124" y="11.5" width="166" height="226"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="166" id="McF-oy-dex"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YtR-lv-JtN" firstAttribute="top" secondItem="cfK-As-qj6" secondAttribute="topMargin" id="Zik-kh-rv8"/>
+                                        <constraint firstItem="YtR-lv-JtN" firstAttribute="bottom" secondItem="cfK-As-qj6" secondAttribute="bottomMargin" id="cOH-Ne-X5I"/>
+                                        <constraint firstItem="YtR-lv-JtN" firstAttribute="centerX" secondItem="cfK-As-qj6" secondAttribute="centerX" id="ov0-4L-bdi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="camaraImage" destination="YtR-lv-JtN" id="g1B-u8-RIC"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imagenAccionesCell" rowHeight="255" id="Z91-1k-Sl9" customClass="ImagenTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="278" width="414" height="255"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z91-1k-Sl9" id="SaW-Ly-bpp">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="255"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EzJ-07-X7i">
+                                            <rect key="frame" x="20" y="11" width="374" height="233"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="EzJ-07-X7i" firstAttribute="leading" secondItem="SaW-Ly-bpp" secondAttribute="leadingMargin" id="1Et-DL-ATY"/>
+                                        <constraint firstItem="EzJ-07-X7i" firstAttribute="trailing" secondItem="SaW-Ly-bpp" secondAttribute="trailingMargin" id="38S-NO-Zey"/>
+                                        <constraint firstItem="EzJ-07-X7i" firstAttribute="bottom" secondItem="SaW-Ly-bpp" secondAttribute="bottomMargin" id="O3M-tC-vaR"/>
+                                        <constraint firstItem="EzJ-07-X7i" firstAttribute="top" secondItem="SaW-Ly-bpp" secondAttribute="topMargin" id="oaz-lR-r4f"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descargaImage" destination="EzJ-07-X7i" id="AIK-ak-z5x"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="textoAccionesCell" id="lZJ-Qb-QF2" customClass="TextoTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="533" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lZJ-Qb-QF2" id="IDg-ot-7Ah">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IIQ-zY-Sbs">
+                                            <rect key="frame" x="20" y="5" width="374" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="IIQ-zY-Sbs" secondAttribute="trailing" constant="20" id="5sJ-Me-atm"/>
+                                        <constraint firstItem="IIQ-zY-Sbs" firstAttribute="centerY" secondItem="IDg-ot-7Ah" secondAttribute="centerY" id="BEj-rZ-svt"/>
+                                        <constraint firstItem="IIQ-zY-Sbs" firstAttribute="leading" secondItem="IDg-ot-7Ah" secondAttribute="leading" constant="20" id="yyh-B3-tzh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textoField" destination="IIQ-zY-Sbs" id="rgh-ec-7ci"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="telefonoAccionesCell" id="tw5-qS-8XY" customClass="TelefonoTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="576.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tw5-qS-8XY" id="EJK-5b-UsK">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0LT-O9-la9">
+                                            <rect key="frame" x="20" y="5" width="374" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="0LT-O9-la9" secondAttribute="trailing" constant="20" id="4m7-js-DZq"/>
+                                        <constraint firstItem="0LT-O9-la9" firstAttribute="centerY" secondItem="EJK-5b-UsK" secondAttribute="centerY" id="I4I-vB-6EO"/>
+                                        <constraint firstItem="0LT-O9-la9" firstAttribute="leading" secondItem="EJK-5b-UsK" secondAttribute="leading" constant="20" id="zPq-D8-V0Z"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="telefonoField" destination="0LT-O9-la9" id="7TR-Gn-W6A"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oQ0-Ed-blk" id="SxM-Ar-wY5"/>
+                            <outlet property="delegate" destination="oQ0-Ed-blk" id="v1B-xQ-bVQ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eZV-fO-p8L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2998.5507246376815" y="138.61607142857142"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="hdV-cL-hPy">
             <objects>
@@ -103,4 +215,7 @@
             <point key="canvasLocation" x="1163.768115942029" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" catalog="system" width="128" height="96"/>
+    </resources>
 </document>

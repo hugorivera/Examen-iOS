@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C86D0CF024858B1100E79E7B /* AccionesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D0CEF24858B1100E79E7B /* AccionesTableViewController.swift */; };
+		C86D0CF324858CC300E79E7B /* CamaraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D0CF224858CC200E79E7B /* CamaraTableViewCell.swift */; };
+		C86D0CF524858CFB00E79E7B /* ImagenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D0CF424858CFB00E79E7B /* ImagenTableViewCell.swift */; };
+		C86D0CF724858D3300E79E7B /* TextoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D0CF624858D3300E79E7B /* TextoTableViewCell.swift */; };
+		C86D0CF924858D4E00E79E7B /* TelefonoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D0CF824858D4E00E79E7B /* TelefonoTableViewCell.swift */; };
 		C89512702484B4840093834E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C895126F2484B4840093834E /* AppDelegate.swift */; };
 		C89512722484B4840093834E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89512712484B4840093834E /* SceneDelegate.swift */; };
 		C89512742484B4840093834E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89512732484B4840093834E /* ViewController.swift */; };
@@ -36,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C86D0CEF24858B1100E79E7B /* AccionesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccionesTableViewController.swift; sourceTree = "<group>"; };
+		C86D0CF224858CC200E79E7B /* CamaraTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamaraTableViewCell.swift; sourceTree = "<group>"; };
+		C86D0CF424858CFB00E79E7B /* ImagenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagenTableViewCell.swift; sourceTree = "<group>"; };
+		C86D0CF624858D3300E79E7B /* TextoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextoTableViewCell.swift; sourceTree = "<group>"; };
+		C86D0CF824858D4E00E79E7B /* TelefonoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonoTableViewCell.swift; sourceTree = "<group>"; };
 		C895126C2484B4840093834E /* Examen iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Examen iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C895126F2484B4840093834E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C89512712484B4840093834E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +88,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C86D0CF124858CAA00E79E7B /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C86D0CF224858CC200E79E7B /* CamaraTableViewCell.swift */,
+				C86D0CF424858CFB00E79E7B /* ImagenTableViewCell.swift */,
+				C86D0CF624858D3300E79E7B /* TextoTableViewCell.swift */,
+				C86D0CF824858D4E00E79E7B /* TelefonoTableViewCell.swift */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		C89512632484B4830093834E = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +122,7 @@
 		C895126E2484B4840093834E /* Examen iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C86D0CF124858CAA00E79E7B /* Custom Cells */,
 				C895126F2484B4840093834E /* AppDelegate.swift */,
 				C89512712484B4840093834E /* SceneDelegate.swift */,
 				C89512732484B4840093834E /* ViewController.swift */,
@@ -109,6 +131,7 @@
 				C895127A2484B4A60093834E /* LaunchScreen.storyboard */,
 				C895127D2484B4A60093834E /* Info.plist */,
 				C895129F2484B8EF0093834E /* OpcionesTableViewController.swift */,
+				C86D0CEF24858B1100E79E7B /* AccionesTableViewController.swift */,
 			);
 			path = "Examen iOS";
 			sourceTree = "<group>";
@@ -263,9 +286,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C89512742484B4840093834E /* ViewController.swift in Sources */,
+				C86D0CF024858B1100E79E7B /* AccionesTableViewController.swift in Sources */,
+				C86D0CF724858D3300E79E7B /* TextoTableViewCell.swift in Sources */,
+				C86D0CF924858D4E00E79E7B /* TelefonoTableViewCell.swift in Sources */,
+				C86D0CF324858CC300E79E7B /* CamaraTableViewCell.swift in Sources */,
 				C89512A02484B8EF0093834E /* OpcionesTableViewController.swift in Sources */,
 				C89512702484B4840093834E /* AppDelegate.swift in Sources */,
 				C89512722484B4840093834E /* SceneDelegate.swift in Sources */,
+				C86D0CF524858CFB00E79E7B /* ImagenTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

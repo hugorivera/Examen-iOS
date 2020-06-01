@@ -12,15 +12,21 @@ class OpcionesTableViewController: UITableViewController {
     
     var opcionesString: [String] = ["Cámara", "Foto", "Nombre Completo", "Número telefónico", "Fecha de nacimiento", "Sexo", "Color Favorito"]
     var opcionesSelec: [Bool] = [false, false, false, false, false, false, false,]
+    
+    var goToNextController = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Opciones"
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        goToNextController = false
     }
 
     // MARK: - Table view data source
@@ -53,6 +59,42 @@ class OpcionesTableViewController: UITableViewController {
         }else{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
             opcionesSelec[indexPath.row] = false
+            goToNextController = false
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return setButtonFooter()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 45
+    }
+    
+    func setButtonFooter() -> UIView{
+        let Footer = UIView(frame: CGRect(x: 0, y: 0, width: Double(self.tableView.frame.size.width), height: 45))
+        let button = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: Footer.frame.size.width, height: Footer.frame.size.height)
+        button.setTitle("Siguiente", for: .normal)
+        button.setTitleColor(.link, for: .normal)
+        button.addTarget(self, action: #selector(sendInfo), for: .touchUpInside)
+        
+        Footer.addSubview(button)
+        Footer.bringSubviewToFront(button)
+        return Footer
+    }
+    
+    @objc func sendInfo(){
+        for i in 0 ..< opcionesSelec.count {
+            if opcionesSelec[i]{
+                goToNextController = true
+            }
+        }
+        
+        if goToNextController{
+            let nextViewController = self.storyboard!.instantiateViewController(identifier: "accionesController") as! AccionesTableViewController
+            nextViewController.seleccionado = opcionesSelec
+            self.navigationController?.pushViewController(nextViewController, animated: true)
         }
     }
     
