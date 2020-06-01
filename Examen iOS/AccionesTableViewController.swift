@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 //protocol ImagePickerDelegate {
 //    func camara()
@@ -50,6 +51,7 @@ class AccionesTableViewController: UITableViewController, UIImagePickerControlle
             return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "imagenAccionesCell", for: indexPath) as! ImagenTableViewCell
+            cell.descargaImage.sd_setImage(with: URL(string: "https://http2.mlstatic.com/vegeta-tamano-real-para-armar-en-papercrasft-D_NQ_NP_892880-MLA26232224460_102017-F.jpg"), placeholderImage: UIImage(named: "placeholder"))
             return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "textoAccionesCell", for: indexPath) as! TextoTableViewCell
