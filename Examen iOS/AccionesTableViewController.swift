@@ -16,6 +16,14 @@ import SDWebImage
 class AccionesTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var seleccionado: [Bool] = []
+    let sexo: [String] = ["Femenino", "Masculino"]
+    var sexoVisible = false
+    var sexoSelecc: [Bool] = [false, false]
+    let colores: [String] = ["Brown", "Blue", "Cyan", "Green", "Orange"]
+    let color: [UIColor] = [.brown, .blue, .cyan, .green, .orange]
+    var coloresVisible = false
+    var colorSelecc: [Bool] = [true, true, true, true, true]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,55 +33,136 @@ class AccionesTableViewController: UITableViewController, UIImagePickerControlle
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        sexoVisible = seleccionado[5]
+        coloresVisible = seleccionado[6]
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        
+        switch section {
+        case 0:
+            return 5
+        case 1:
+            return sexo.count
+        case 2:
+            return colores.count
+        default:
+            fatalError("secciones desconocidas")
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch indexPath.row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "camaraAccionesCell", for: indexPath) as! CamaraTableViewCell
-            let tap = UITapGestureRecognizer(target: self, action: #selector(camara))
-            cell.camaraImage.isUserInteractionEnabled = true
-            cell.camaraImage.addGestureRecognizer(tap)
-            return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "imagenAccionesCell", for: indexPath) as! ImagenTableViewCell
-            cell.descargaImage.sd_setImage(with: URL(string: "https://http2.mlstatic.com/vegeta-tamano-real-para-armar-en-papercrasft-D_NQ_NP_892880-MLA26232224460_102017-F.jpg"), placeholderImage: UIImage(named: "placeholder"))
-            return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "textoAccionesCell", for: indexPath) as! TextoTableViewCell
-            return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "telefonoAccionesCell", for: indexPath) as! TelefonoTableViewCell
-            return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
+        if indexPath.section == 0{
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "camaraAccionesCell", for: indexPath) as! CamaraTableViewCell
+                let tap = UITapGestureRecognizer(target: self, action: #selector(camara))
+                cell.camaraImage.isUserInteractionEnabled = true
+                cell.camaraImage.addGestureRecognizer(tap)
+                return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "imagenAccionesCell", for: indexPath) as! ImagenTableViewCell
+                cell.descargaImage.sd_setImage(with: URL(string: "https://http2.mlstatic.com/vegeta-tamano-real-para-armar-en-papercrasft-D_NQ_NP_892880-MLA26232224460_102017-F.jpg"), placeholderImage: UIImage(named: "placeholder"))
+                return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "textoAccionesCell", for: indexPath) as! TextoTableViewCell
+                return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
+            case 3:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "telefonoAccionesCell", for: indexPath) as! TelefonoTableViewCell
+                return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "fechaAccionesCell", for: indexPath) as! FechaTableViewCell
+                return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
+            }
+        } else if indexPath.section == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "sexoAccionesCell", for: indexPath)
+            cell.textLabel?.text = sexo[indexPath.row]
+            cell.accessoryType = checkCelda(check: sexoSelecc[indexPath.row])
+            return mostrarCelda(cell: cell, visible: sexoVisible)
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "coloresAccionesCell", for: indexPath)
+            cell.textLabel?.text = colores[indexPath.row]
+            cell.textLabel?.textColor = color[indexPath.row]
+            cell.accessoryType = checkCelda(check: colorSelecc[indexPath.row])
+            return mostrarCelda(cell: cell, visible: coloresVisible)
         }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
-            return tamañoCelda(tamaño: 250, visible: seleccionado[indexPath.row])
-        case 1:
-            return tamañoCelda(tamaño: 250, visible: seleccionado[indexPath.row])
-        case 2:
-            return tamañoCelda(tamaño: 44, visible: seleccionado[indexPath.row])
-        default:
-            return tamañoCelda(tamaño: 44, visible: seleccionado[indexPath.row])
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                return tamañoCelda(tamaño: 250, visible: seleccionado[indexPath.row])
+            case 1:
+                return tamañoCelda(tamaño: 250, visible: seleccionado[indexPath.row])
+            case 2:
+                return tamañoCelda(tamaño: 83, visible: seleccionado[indexPath.row])
+            case 3:
+                return tamañoCelda(tamaño: 83, visible: seleccionado[indexPath.row])
+            default:
+                return tamañoCelda(tamaño: 255, visible: seleccionado[indexPath.row])
+            }
+        } else if indexPath.section == 1{
+            return tamañoCelda(tamaño: 57, visible: sexoVisible)
+        } else {
+            return tamañoCelda(tamaño: 57, visible: coloresVisible)
+        }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        if sexoVisible && coloresVisible{
+//            return "Section \(section)"
+//        } else {
+//            return nil
+//        }
+        return "Sección \(section)"
+
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1{
+            if (tableView.cellForRow(at: IndexPath.init(row: 0, section: 1))?.accessoryType == UITableViewCell.AccessoryType.none) {
+                tableView.cellForRow(at: IndexPath.init(row: 0, section: 1))?.accessoryType = UITableViewCell.AccessoryType.checkmark
+                tableView.cellForRow(at: IndexPath.init(row: 1, section: 1))?.accessoryType = UITableViewCell.AccessoryType.none
+                sexoSelecc[0] = true
+                sexoSelecc[1] = false
+            }else if (tableView.cellForRow(at: IndexPath.init(row: 1, section: 1))?.accessoryType == UITableViewCell.AccessoryType.none){
+                tableView.cellForRow(at: IndexPath.init(row: 0, section: 1))?.accessoryType = UITableViewCell.AccessoryType.none
+                tableView.cellForRow(at: IndexPath.init(row: 1, section: 1))?.accessoryType = UITableViewCell.AccessoryType.checkmark
+                sexoSelecc[0] = false
+                sexoSelecc[1] = true
+            }
+        }else if indexPath.section == 2{
+            if (tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none) {
+                tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+                colorSelecc[indexPath.row] = true
+            }else{
+                var colorCheck = 0
+                for i in 0 ..< colorSelecc.count {
+                    if colorSelecc[i]{
+                        colorCheck += 1
+                    }
+                }
+                if colorCheck > 1 {
+                    colorSelecc[indexPath.row] = false
+                    tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+                }
+            }
         }
     }
+    
+    
     
     // MARK: - Métodos
     
@@ -111,6 +200,14 @@ class AccionesTableViewController: UITableViewController, UIImagePickerControlle
             return tamaño
         } else {
             return 0.0
+        }
+    }
+    
+    private func checkCelda(check: Bool) -> UITableViewCell.AccessoryType{
+        if check{
+            return UITableViewCell.AccessoryType.checkmark
+        }else{
+            return UITableViewCell.AccessoryType.none
         }
     }
     

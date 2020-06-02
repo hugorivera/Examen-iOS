@@ -95,7 +95,18 @@ class OpcionesTableViewController: UITableViewController {
             let nextViewController = self.storyboard!.instantiateViewController(identifier: "accionesController") as! AccionesTableViewController
             nextViewController.seleccionado = opcionesSelec
             self.navigationController?.pushViewController(nextViewController, animated: true)
+        } else {
+            alertas(titulo: "Información incompleta", mensaje: "Favor de seleccionar al menos una opción", textoBoton: "Aceptar", controlador: self)
         }
+    }
+    
+    func alertas(titulo: String, mensaje: String, textoBoton: String, controlador: UIViewController){
+        let alertController = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: textoBoton, style: .cancel, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        controlador.present(alertController, animated: true, completion: nil)
     }
     
 
