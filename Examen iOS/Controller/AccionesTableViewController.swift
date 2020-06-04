@@ -11,13 +11,16 @@ import SDWebImage
 
 class AccionesTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var opcionesSelec: [Opcion] = []
+    var opcionesSelec: [OpcionViewModel] = []
+    
+    var sexoViewModels = [SexoViewModel]()
     var sexos = [
         Sexo(titulo: "Femenino", seleccionado: false),
         Sexo(titulo: "Masculino", seleccionado: false)
     ]
     var sexoVisible = false
     
+    var colorViewModels = [ColorViewModel]()
     var colores = [
         Color(titulo: "Brown", color: .brown, seleccionado: true),
         Color(titulo: "Blue", color: .blue, seleccionado: true),
@@ -36,6 +39,12 @@ class AccionesTableViewController: UITableViewController, UIImagePickerControlle
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.sexoViewModels = sexos.map({return
+        SexoViewModel(sexo: $0)} )
+        
+        self.colorViewModels = colores.map({return
+            ColorViewModel(color: $0)})
+        
         sexoVisible = opcionesSelec[5].seleccionado
         coloresVisible = opcionesSelec[6].seleccionado
     }
@@ -54,9 +63,9 @@ class AccionesTableViewController: UITableViewController, UIImagePickerControlle
         case 0:
             return 5
         case 1:
-            return sexos.count
+            return sexoViewModels.count
         case 2:
-            return colores.count
+            return colorViewModels.count
         default:
             fatalError("secciones desconocidas")
         }
@@ -87,15 +96,18 @@ class AccionesTableViewController: UITableViewController, UIImagePickerControlle
                 return mostrarCelda(cell: cell, visible: opcionesSelec[indexPath.row].seleccionado)
             }
         } else if indexPath.section == 1{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "sexoAccionesCell", for: indexPath)
-            cell.textLabel?.text = sexos[indexPath.row].titulo
-            cell.accessoryType = checkCelda(check: sexos[indexPath.row].seleccionado)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "sexoAccionesCell", for: indexPath) as! SexoTableViewCell
+            
+            let sexoViewModel = sexoViewModels[indexPath.row]
+            cell.sexoViewModel = sexoViewModel
+            cell.accessoryType = checkCelda(check: sexoViewModels[indexPath.row].seleccionado)
             return mostrarCelda(cell: cell, visible: sexoVisible)
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "coloresAccionesCell", for: indexPath)
-            cell.textLabel?.text = colores[indexPath.row].titulo
-            cell.textLabel?.textColor = colores[indexPath.row].color
-            cell.accessoryType = checkCelda(check: colores[indexPath.row].seleccionado)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "coloresAccionesCell", for: indexPath) as! ColorTableViewCell
+            
+            let colorViewModel = colorViewModels[indexPath.row]
+            cell.colorViewModel = colorViewModel
+            cell.accessoryType = checkCelda(check: colorViewModels[indexPath.row].seleccionado)
             return mostrarCelda(cell: cell, visible: coloresVisible)
         }
     }
@@ -137,27 +149,27 @@ class AccionesTableViewController: UITableViewController, UIImagePickerControlle
             if (tableView.cellForRow(at: IndexPath.init(row: 0, section: 1))?.accessoryType == UITableViewCell.AccessoryType.none) {
                 tableView.cellForRow(at: IndexPath.init(row: 0, section: 1))?.accessoryType = UITableViewCell.AccessoryType.checkmark
                 tableView.cellForRow(at: IndexPath.init(row: 1, section: 1))?.accessoryType = UITableViewCell.AccessoryType.none
-                sexos[0].seleccionado = true
-                sexos[1].seleccionado = false
+                sexoViewModels[0].seleccionado = true
+                sexoViewModels[1].seleccionado = false
             }else if (tableView.cellForRow(at: IndexPath.init(row: 1, section: 1))?.accessoryType == UITableViewCell.AccessoryType.none){
                 tableView.cellForRow(at: IndexPath.init(row: 0, section: 1))?.accessoryType = UITableViewCell.AccessoryType.none
                 tableView.cellForRow(at: IndexPath.init(row: 1, section: 1))?.accessoryType = UITableViewCell.AccessoryType.checkmark
-                sexos[0].seleccionado = false
-                sexos[1].seleccionado = true
+                sexoViewModels[0].seleccionado = false
+                sexoViewModels[1].seleccionado = true
             }
         }else if indexPath.section == 2{
             if (tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none) {
                 tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-                colores[indexPath.row].seleccionado = true
+                colorViewModels[indexPath.row].seleccionado = true
             }else{
                 var colorCheck = 0
-                for i in 0 ..< colores.count {
-                    if colores[i].seleccionado{
+                for i in 0 ..< colorViewModels.count {
+                    if colorViewModels[i].seleccionado{
                         colorCheck += 1
                     }
                 }
                 if colorCheck > 1 {
-                    colores[indexPath.row].seleccionado = false
+                    colorViewModels[indexPath.row].seleccionado = false
                     tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
                 }
             }

@@ -26,6 +26,12 @@
 		C8D004282489813C00BDDDD5 /* Opcion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D004272489813C00BDDDD5 /* Opcion.swift */; };
 		C8D0042A248986D000BDDDD5 /* Sexo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D00429248986D000BDDDD5 /* Sexo.swift */; };
 		C8D0042C248986DC00BDDDD5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0042B248986DC00BDDDD5 /* Color.swift */; };
+		C8D0043024899CA200BDDDD5 /* OpcionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0042F24899CA200BDDDD5 /* OpcionViewModel.swift */; };
+		C8D004322489A03B00BDDDD5 /* OpcionesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D004312489A03B00BDDDD5 /* OpcionesTableViewCell.swift */; };
+		C8D004342489A54B00BDDDD5 /* SexoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D004332489A54B00BDDDD5 /* SexoViewModel.swift */; };
+		C8D004362489A55900BDDDD5 /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D004352489A55900BDDDD5 /* ColorViewModel.swift */; };
+		C8D004382489A57100BDDDD5 /* SexoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D004372489A57100BDDDD5 /* SexoTableViewCell.swift */; };
+		C8D0043A2489A58000BDDDD5 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D004392489A58000BDDDD5 /* ColorTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +79,12 @@
 		C8D004272489813C00BDDDD5 /* Opcion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opcion.swift; sourceTree = "<group>"; };
 		C8D00429248986D000BDDDD5 /* Sexo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sexo.swift; sourceTree = "<group>"; };
 		C8D0042B248986DC00BDDDD5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		C8D0042F24899CA200BDDDD5 /* OpcionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcionViewModel.swift; sourceTree = "<group>"; };
+		C8D004312489A03B00BDDDD5 /* OpcionesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcionesTableViewCell.swift; sourceTree = "<group>"; };
+		C8D004332489A54B00BDDDD5 /* SexoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexoViewModel.swift; sourceTree = "<group>"; };
+		C8D004352489A55900BDDDD5 /* ColorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
+		C8D004372489A57100BDDDD5 /* SexoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexoTableViewCell.swift; sourceTree = "<group>"; };
+		C8D004392489A58000BDDDD5 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +138,9 @@
 				C86D0CF624858D3300E79E7B /* TextoTableViewCell.swift */,
 				C86D0CF824858D4E00E79E7B /* TelefonoTableViewCell.swift */,
 				C86D0CFA2485E61C00E79E7B /* FechaTableViewCell.swift */,
+				C8D004312489A03B00BDDDD5 /* OpcionesTableViewCell.swift */,
+				C8D004372489A57100BDDDD5 /* SexoTableViewCell.swift */,
+				C8D004392489A58000BDDDD5 /* ColorTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,6 +170,7 @@
 		C895126E2484B4840093834E /* Examen iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C8D0042E24899C7600BDDDD5 /* ViewModel */,
 				C8D0042D24898BA100BDDDD5 /* Controller */,
 				C8D00426248980B700BDDDD5 /* Model */,
 				C86D0CF124858CAA00E79E7B /* View */,
@@ -204,6 +220,16 @@
 				C86D0CEF24858B1100E79E7B /* AccionesTableViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C8D0042E24899C7600BDDDD5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C8D0042F24899CA200BDDDD5 /* OpcionViewModel.swift */,
+				C8D004332489A54B00BDDDD5 /* SexoViewModel.swift */,
+				C8D004352489A55900BDDDD5 /* ColorViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,11 +411,17 @@
 				C86D0CF024858B1100E79E7B /* AccionesTableViewController.swift in Sources */,
 				C86D0CF724858D3300E79E7B /* TextoTableViewCell.swift in Sources */,
 				C86D0CF924858D4E00E79E7B /* TelefonoTableViewCell.swift in Sources */,
+				C8D0043024899CA200BDDDD5 /* OpcionViewModel.swift in Sources */,
+				C8D004322489A03B00BDDDD5 /* OpcionesTableViewCell.swift in Sources */,
 				C8D0042C248986DC00BDDDD5 /* Color.swift in Sources */,
 				C8D0042A248986D000BDDDD5 /* Sexo.swift in Sources */,
+				C8D004382489A57100BDDDD5 /* SexoTableViewCell.swift in Sources */,
 				C86D0CF324858CC300E79E7B /* CamaraTableViewCell.swift in Sources */,
+				C8D004362489A55900BDDDD5 /* ColorViewModel.swift in Sources */,
+				C8D004342489A54B00BDDDD5 /* SexoViewModel.swift in Sources */,
 				C89512A02484B8EF0093834E /* OpcionesTableViewController.swift in Sources */,
 				C89512702484B4840093834E /* AppDelegate.swift in Sources */,
+				C8D0043A2489A58000BDDDD5 /* ColorTableViewCell.swift in Sources */,
 				C89512722484B4840093834E /* SceneDelegate.swift in Sources */,
 				C86D0CF524858CFB00E79E7B /* ImagenTableViewCell.swift in Sources */,
 				C86D0CFB2485E61C00E79E7B /* FechaTableViewCell.swift in Sources */,

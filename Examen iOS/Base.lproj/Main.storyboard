@@ -54,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="opcionesCell" textLabel="xrb-OW-QA9" style="IBUITableViewCellStyleDefault" id="vRD-uN-5eG">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="opcionesCell" textLabel="xrb-OW-QA9" style="IBUITableViewCellStyleDefault" id="vRD-uN-5eG" customClass="OpcionesTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vRD-uN-5eG" id="DYv-yk-25c">
@@ -128,7 +128,7 @@
                                     <outlet property="camaraImage" destination="YtR-lv-JtN" id="g1B-u8-RIC"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imagenAccionesCell" rowHeight="255" id="Z91-1k-Sl9" customClass="ImagenTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="imagenAccionesCell" rowHeight="255" id="Z91-1k-Sl9" customClass="ImagenTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="278" width="414" height="255"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z91-1k-Sl9" id="SaW-Ly-bpp">
@@ -162,7 +162,7 @@
                                     <outlet property="descargaImage" destination="EzJ-07-X7i" id="AIK-ak-z5x"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="textoAccionesCell" rowHeight="83" id="lZJ-Qb-QF2" customClass="TextoTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="textoAccionesCell" rowHeight="83" id="lZJ-Qb-QF2" customClass="TextoTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="533" width="414" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lZJ-Qb-QF2" id="IDg-ot-7Ah">
@@ -197,7 +197,7 @@
                                     <outlet property="textoField" destination="IIQ-zY-Sbs" id="rgh-ec-7ci"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="telefonoAccionesCell" rowHeight="83" id="tw5-qS-8XY" customClass="TelefonoTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="telefonoAccionesCell" rowHeight="83" id="tw5-qS-8XY" customClass="TelefonoTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="616" width="414" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tw5-qS-8XY" id="EJK-5b-UsK">
@@ -229,7 +229,7 @@
                                     <outlet property="telefonoField" destination="0LT-O9-la9" id="7TR-Gn-W6A"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="fechaAccionesCell" rowHeight="255" id="Q5h-GO-65h" customClass="FechaTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="fechaAccionesCell" rowHeight="255" id="Q5h-GO-65h" customClass="FechaTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="699" width="414" height="255"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q5h-GO-65h" id="Wgx-0j-5Pi">
@@ -276,7 +276,7 @@
                                     <outlet property="fechaField" destination="2Ol-8m-LzY" id="Rb1-ha-iWE"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="sexoAccionesCell" textLabel="2hx-p1-rHg" rowHeight="57" style="IBUITableViewCellStyleDefault" id="Rqk-NA-6yl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="sexoAccionesCell" textLabel="2hx-p1-rHg" rowHeight="57" style="IBUITableViewCellStyleDefault" id="Rqk-NA-6yl" customClass="SexoTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="954" width="414" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rqk-NA-6yl" id="YdP-pX-p9v">
@@ -293,7 +293,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="coloresAccionesCell" textLabel="T7b-fb-hYw" rowHeight="57" style="IBUITableViewCellStyleDefault" id="Afw-30-0Pi">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="coloresAccionesCell" textLabel="T7b-fb-hYw" rowHeight="57" style="IBUITableViewCellStyleDefault" id="Afw-30-0Pi" customClass="ColorTableViewCell" customModule="Examen_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1011" width="414" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Afw-30-0Pi" id="HB4-55-4SE">
