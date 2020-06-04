@@ -10,8 +10,15 @@ import UIKit
 
 class OpcionesTableViewController: UITableViewController {
     
-    var opcionesString: [String] = ["Cámara", "Foto", "Nombre Completo", "Número telefónico", "Fecha de nacimiento", "Sexo", "Color Favorito"]
-    var opcionesSelec: [Bool] = [false, false, false, false, false, false, false,]
+    var opciones = [
+        Opcion(titulo: "Cámara", seleccionado: false),
+        Opcion(titulo: "Foto", seleccionado: false),
+        Opcion(titulo: "Nombre Completo", seleccionado: false),
+        Opcion(titulo: "Número telefónico", seleccionado: false),
+        Opcion(titulo: "Fecha de nacimiento", seleccionado: false),
+        Opcion(titulo: "Sexo", seleccionado: false),
+        Opcion(titulo: "Color Favorito", seleccionado: false)
+    ]
     
     var goToNextController = false
 
@@ -38,13 +45,15 @@ class OpcionesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return opcionesString.count
+        return opciones.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "opcionesCell", for: indexPath)
-        cell.textLabel?.text = opcionesString[indexPath.row]
+        
+        let opcion = opciones[indexPath.row]
+        cell.textLabel?.text = opcion.titulo
         cell.accessoryType = UITableViewCell.AccessoryType.none
 
         // Configure the cell...
@@ -55,10 +64,10 @@ class OpcionesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none) {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            opcionesSelec[indexPath.row] = true
+            opciones[indexPath.row].seleccionado = true
         }else{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
-            opcionesSelec[indexPath.row] = false
+            opciones[indexPath.row].seleccionado = false
             goToNextController = false
         }
     }
@@ -85,15 +94,15 @@ class OpcionesTableViewController: UITableViewController {
     }
     
     @objc func sendInfo(){
-        for i in 0 ..< opcionesSelec.count {
-            if opcionesSelec[i]{
+        for i in 0 ..< opciones.count {
+            if opciones[i].seleccionado{
                 goToNextController = true
             }
         }
         
         if goToNextController{
             let nextViewController = self.storyboard!.instantiateViewController(identifier: "accionesController") as! AccionesTableViewController
-            nextViewController.seleccionado = opcionesSelec
+            nextViewController.opcionesSelec = opciones
             self.navigationController?.pushViewController(nextViewController, animated: true)
         } else {
             alertas(titulo: "Información incompleta", mensaje: "Favor de seleccionar al menos una opción", textoBoton: "Aceptar", controlador: self)

@@ -23,6 +23,9 @@
 		C89512872484B4A60093834E /* Examen_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89512862484B4A60093834E /* Examen_iOSTests.swift */; };
 		C89512922484B4A70093834E /* Examen_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89512912484B4A70093834E /* Examen_iOSUITests.swift */; };
 		C89512A02484B8EF0093834E /* OpcionesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C895129F2484B8EF0093834E /* OpcionesTableViewController.swift */; };
+		C8D004282489813C00BDDDD5 /* Opcion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D004272489813C00BDDDD5 /* Opcion.swift */; };
+		C8D0042A248986D000BDDDD5 /* Sexo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D00429248986D000BDDDD5 /* Sexo.swift */; };
+		C8D0042C248986DC00BDDDD5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0042B248986DC00BDDDD5 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		C89512912484B4A70093834E /* Examen_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examen_iOSUITests.swift; sourceTree = "<group>"; };
 		C89512932484B4A70093834E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C895129F2484B8EF0093834E /* OpcionesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcionesTableViewController.swift; sourceTree = "<group>"; };
+		C8D004272489813C00BDDDD5 /* Opcion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opcion.swift; sourceTree = "<group>"; };
+		C8D00429248986D000BDDDD5 /* Sexo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sexo.swift; sourceTree = "<group>"; };
+		C8D0042B248986DC00BDDDD5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +118,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C86D0CF124858CAA00E79E7B /* Custom Cells */ = {
+		C86D0CF124858CAA00E79E7B /* View */ = {
 			isa = PBXGroup;
 			children = (
 				C86D0CF224858CC200E79E7B /* CamaraTableViewCell.swift */,
@@ -121,7 +127,7 @@
 				C86D0CF824858D4E00E79E7B /* TelefonoTableViewCell.swift */,
 				C86D0CFA2485E61C00E79E7B /* FechaTableViewCell.swift */,
 			);
-			path = "Custom Cells";
+			path = View;
 			sourceTree = "<group>";
 		};
 		C89512632484B4830093834E = {
@@ -149,7 +155,9 @@
 		C895126E2484B4840093834E /* Examen iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C86D0CF124858CAA00E79E7B /* Custom Cells */,
+				C8D0042D24898BA100BDDDD5 /* Controller */,
+				C8D00426248980B700BDDDD5 /* Model */,
+				C86D0CF124858CAA00E79E7B /* View */,
 				C895126F2484B4840093834E /* AppDelegate.swift */,
 				C89512712484B4840093834E /* SceneDelegate.swift */,
 				C89512732484B4840093834E /* ViewController.swift */,
@@ -157,8 +165,6 @@
 				C89512782484B4A60093834E /* Assets.xcassets */,
 				C895127A2484B4A60093834E /* LaunchScreen.storyboard */,
 				C895127D2484B4A60093834E /* Info.plist */,
-				C895129F2484B8EF0093834E /* OpcionesTableViewController.swift */,
-				C86D0CEF24858B1100E79E7B /* AccionesTableViewController.swift */,
 			);
 			path = "Examen iOS";
 			sourceTree = "<group>";
@@ -179,6 +185,25 @@
 				C89512932484B4A70093834E /* Info.plist */,
 			);
 			path = "Examen iOSUITests";
+			sourceTree = "<group>";
+		};
+		C8D00426248980B700BDDDD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C8D004272489813C00BDDDD5 /* Opcion.swift */,
+				C8D00429248986D000BDDDD5 /* Sexo.swift */,
+				C8D0042B248986DC00BDDDD5 /* Color.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C8D0042D24898BA100BDDDD5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C895129F2484B8EF0093834E /* OpcionesTableViewController.swift */,
+				C86D0CEF24858B1100E79E7B /* AccionesTableViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,12 +385,15 @@
 				C86D0CF024858B1100E79E7B /* AccionesTableViewController.swift in Sources */,
 				C86D0CF724858D3300E79E7B /* TextoTableViewCell.swift in Sources */,
 				C86D0CF924858D4E00E79E7B /* TelefonoTableViewCell.swift in Sources */,
+				C8D0042C248986DC00BDDDD5 /* Color.swift in Sources */,
+				C8D0042A248986D000BDDDD5 /* Sexo.swift in Sources */,
 				C86D0CF324858CC300E79E7B /* CamaraTableViewCell.swift in Sources */,
 				C89512A02484B8EF0093834E /* OpcionesTableViewController.swift in Sources */,
 				C89512702484B4840093834E /* AppDelegate.swift in Sources */,
 				C89512722484B4840093834E /* SceneDelegate.swift in Sources */,
 				C86D0CF524858CFB00E79E7B /* ImagenTableViewCell.swift in Sources */,
 				C86D0CFB2485E61C00E79E7B /* FechaTableViewCell.swift in Sources */,
+				C8D004282489813C00BDDDD5 /* Opcion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,20 +9,23 @@
 import UIKit
 import SDWebImage
 
-//protocol ImagePickerDelegate {
-//    func camara()
-//}
-
 class AccionesTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var seleccionado: [Bool] = []
-    let sexo: [String] = ["Femenino", "Masculino"]
+    var opcionesSelec: [Opcion] = []
+    var sexos = [
+        Sexo(titulo: "Femenino", seleccionado: false),
+        Sexo(titulo: "Masculino", seleccionado: false)
+    ]
     var sexoVisible = false
-    var sexoSelecc: [Bool] = [false, false]
-    let colores: [String] = ["Brown", "Blue", "Cyan", "Green", "Orange"]
-    let color: [UIColor] = [.brown, .blue, .cyan, .green, .orange]
+    
+    var colores = [
+        Color(titulo: "Brown", color: .brown, seleccionado: true),
+        Color(titulo: "Blue", color: .blue, seleccionado: true),
+        Color(titulo: "Cyan", color: .cyan, seleccionado: true),
+        Color(titulo: "Green", color: .green, seleccionado: true),
+        Color(titulo: "Orange", color: .orange, seleccionado: true),
+    ]
     var coloresVisible = false
-    var colorSelecc: [Bool] = [true, true, true, true, true]
     
 
     override func viewDidLoad() {
@@ -33,8 +36,8 @@ class AccionesTableViewController: UITableViewController, UIImagePickerControlle
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        sexoVisible = seleccionado[5]
-        coloresVisible = seleccionado[6]
+        sexoVisible = opcionesSelec[5].seleccionado
+        coloresVisible = opcionesSelec[6].seleccionado
     }
 
     // MARK: - Table view data source
@@ -51,7 +54,7 @@ class AccionesTableViewController: UITableViewController, UIImagePickerControlle
         case 0:
             return 5
         case 1:
-            return sexo.count
+            return sexos.count
         case 2:
             return colores.count
         default:
@@ -69,31 +72,30 @@ class AccionesTableViewController: UITableViewController, UIImagePickerControlle
                 let tap = UITapGestureRecognizer(target: self, action: #selector(camara))
                 cell.camaraImage.isUserInteractionEnabled = true
                 cell.camaraImage.addGestureRecognizer(tap)
-                return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
+                return mostrarCelda(cell: cell, visible: opcionesSelec[indexPath.row].seleccionado)
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "imagenAccionesCell", for: indexPath) as! ImagenTableViewCell
-                cell.descargaImage.sd_setImage(with: URL(string: "https://http2.mlstatic.com/vegeta-tamano-real-para-armar-en-papercrasft-D_NQ_NP_892880-MLA26232224460_102017-F.jpg"), placeholderImage: UIImage(named: "placeholder"))
-                return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
+                return mostrarCelda(cell: cell, visible: opcionesSelec[indexPath.row].seleccionado)
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "textoAccionesCell", for: indexPath) as! TextoTableViewCell
-                return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
+                return mostrarCelda(cell: cell, visible: opcionesSelec[indexPath.row].seleccionado)
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "telefonoAccionesCell", for: indexPath) as! TelefonoTableViewCell
-                return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
+                return mostrarCelda(cell: cell, visible: opcionesSelec[indexPath.row].seleccionado)
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "fechaAccionesCell", for: indexPath) as! FechaTableViewCell
-                return mostrarCelda(cell: cell, visible: seleccionado[indexPath.row])
+                return mostrarCelda(cell: cell, visible: opcionesSelec[indexPath.row].seleccionado)
             }
         } else if indexPath.section == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "sexoAccionesCell", for: indexPath)
-            cell.textLabel?.text = sexo[indexPath.row]
-            cell.accessoryType = checkCelda(check: sexoSelecc[indexPath.row])
+            cell.textLabel?.text = sexos[indexPath.row].titulo
+            cell.accessoryType = checkCelda(check: sexos[indexPath.row].seleccionado)
             return mostrarCelda(cell: cell, visible: sexoVisible)
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "coloresAccionesCell", for: indexPath)
-            cell.textLabel?.text = colores[indexPath.row]
-            cell.textLabel?.textColor = color[indexPath.row]
-            cell.accessoryType = checkCelda(check: colorSelecc[indexPath.row])
+            cell.textLabel?.text = colores[indexPath.row].titulo
+            cell.textLabel?.textColor = colores[indexPath.row].color
+            cell.accessoryType = checkCelda(check: colores[indexPath.row].seleccionado)
             return mostrarCelda(cell: cell, visible: coloresVisible)
         }
     }
@@ -102,15 +104,15 @@ class AccionesTableViewController: UITableViewController, UIImagePickerControlle
         if indexPath.section == 0 {
             switch indexPath.row {
             case 0:
-                return tamañoCelda(tamaño: 250, visible: seleccionado[indexPath.row])
+                return tamañoCelda(tamaño: 250, visible: opcionesSelec[indexPath.row].seleccionado)
             case 1:
-                return tamañoCelda(tamaño: 250, visible: seleccionado[indexPath.row])
+                return tamañoCelda(tamaño: 250, visible: opcionesSelec[indexPath.row].seleccionado)
             case 2:
-                return tamañoCelda(tamaño: 83, visible: seleccionado[indexPath.row])
+                return tamañoCelda(tamaño: 83, visible: opcionesSelec[indexPath.row].seleccionado)
             case 3:
-                return tamañoCelda(tamaño: 83, visible: seleccionado[indexPath.row])
+                return tamañoCelda(tamaño: 83, visible: opcionesSelec[indexPath.row].seleccionado)
             default:
-                return tamañoCelda(tamaño: 255, visible: seleccionado[indexPath.row])
+                return tamañoCelda(tamaño: 255, visible: opcionesSelec[indexPath.row].seleccionado)
             }
         } else if indexPath.section == 1{
             return tamañoCelda(tamaño: 57, visible: sexoVisible)
@@ -135,27 +137,27 @@ class AccionesTableViewController: UITableViewController, UIImagePickerControlle
             if (tableView.cellForRow(at: IndexPath.init(row: 0, section: 1))?.accessoryType == UITableViewCell.AccessoryType.none) {
                 tableView.cellForRow(at: IndexPath.init(row: 0, section: 1))?.accessoryType = UITableViewCell.AccessoryType.checkmark
                 tableView.cellForRow(at: IndexPath.init(row: 1, section: 1))?.accessoryType = UITableViewCell.AccessoryType.none
-                sexoSelecc[0] = true
-                sexoSelecc[1] = false
+                sexos[0].seleccionado = true
+                sexos[1].seleccionado = false
             }else if (tableView.cellForRow(at: IndexPath.init(row: 1, section: 1))?.accessoryType == UITableViewCell.AccessoryType.none){
                 tableView.cellForRow(at: IndexPath.init(row: 0, section: 1))?.accessoryType = UITableViewCell.AccessoryType.none
                 tableView.cellForRow(at: IndexPath.init(row: 1, section: 1))?.accessoryType = UITableViewCell.AccessoryType.checkmark
-                sexoSelecc[0] = false
-                sexoSelecc[1] = true
+                sexos[0].seleccionado = false
+                sexos[1].seleccionado = true
             }
         }else if indexPath.section == 2{
             if (tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none) {
                 tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-                colorSelecc[indexPath.row] = true
+                colores[indexPath.row].seleccionado = true
             }else{
                 var colorCheck = 0
-                for i in 0 ..< colorSelecc.count {
-                    if colorSelecc[i]{
+                for i in 0 ..< colores.count {
+                    if colores[i].seleccionado{
                         colorCheck += 1
                     }
                 }
                 if colorCheck > 1 {
-                    colorSelecc[indexPath.row] = false
+                    colores[indexPath.row].seleccionado = false
                     tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
                 }
             }

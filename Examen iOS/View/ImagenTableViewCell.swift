@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ImagenTableViewCell: UITableViewCell {
 
@@ -15,6 +16,7 @@ class ImagenTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        descargaImage.sd_setImage(with: URL(string: "https://http2.mlstatic.com/vegeta-tamano-real-para-armar-en-papercrasft-D_NQ_NP_892880-MLA26232224460_102017-F.jpg"), placeholderImage: UIImage(named: "placeholder"))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
